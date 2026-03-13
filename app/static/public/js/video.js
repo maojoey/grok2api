@@ -3075,6 +3075,12 @@
       }
     });
   }
+  if (promptInput) {
+    promptInput.addEventListener('input', () => {
+      syncPromptRichInputFromTextarea();
+      renderReferenceMentionMenu();
+    });
+  }
 
   document.addEventListener('click', (event) => {
     if (!referenceMentionMenu || referenceMentionMenu.classList.contains('hidden')) return;
